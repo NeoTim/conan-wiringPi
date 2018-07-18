@@ -39,5 +39,8 @@ class WiringpiConan(ConanFile):
         self.copy("*.so", dst="lib", keep_path=False)
         self.copy("*.a", dst="lib", keep_path=False)
 
+        ## License File
+        self.copy("COPYING.LESSER", dst="license", ignore_case=True, keep_path=False)
+
     def package_info(self):
         self.cpp_info.libs = ["wiringPi"]
